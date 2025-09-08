@@ -81,8 +81,8 @@ AI Web Scraper Pro is a production-grade application that combines the power of 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ai-web-scraper-pro.git
-   cd ai-web-scraper-pro
+   git clone https://github.com/vishwajeetdabholkar/Together-AI-Web-Scraper-MCP-Client.git
+   cd Together-AI-Web-Scraper-MCP-Client
    ```
 
 2. **Install dependencies**
@@ -90,6 +90,12 @@ AI Web Scraper Pro is a production-grade application that combines the power of 
    pip install -r requirements.txt
    ```
 
+   Use this link to setup locally running eGet-scrapper : 
+    ```
+    https://github.com/vishwajeetdabholkar/eGet-Crawler-for-ai 
+    ```
+    All instrctuions are provided inside the repo, just start it using Docker and the mcp_scraper server will work
+    
 3. **Configure environment**
    ```bash
    cp env.example .env
