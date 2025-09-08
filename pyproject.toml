@@ -1,0 +1,136 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-web-scraper-pro"
+version = "1.0.0"
+description = "Intelligent Web Content Analysis powered by Together AI & MCP"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "AI Web Scraper Pro Team", email = "team@ai-web-scraper-pro.com"}
+]
+maintainers = [
+    {name = "AI Web Scraper Pro Team", email = "team@ai-web-scraper-pro.com"}
+]
+keywords = ["ai", "web-scraping", "together-ai", "mcp", "streamlit", "flask"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "together>=1.0.0",
+    "mcp>=1.4.0",
+    "flask>=3.0.0",
+    "streamlit>=1.29.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "flask-cors>=4.0.0",
+    "asyncio-compat>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.0.0",
+    "flake8>=6.0.0",
+    "bandit>=1.7.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ai-web-scraper-pro"
+Documentation = "https://github.com/yourusername/ai-web-scraper-pro#documentation"
+Repository = "https://github.com/yourusername/ai-web-scraper-pro.git"
+Issues = "https://github.com/yourusername/ai-web-scraper-pro/issues"
+Changelog = "https://github.com/yourusername/ai-web-scraper-pro/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ai-web-scraper-pro = "backend.app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*", "ui*", "tests*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.py", "*.yml", "*.yaml", "*.json", "*.md", "*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["backend", "ui", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=backend",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+
+[tool.coverage.run]
+source = ["backend"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/env/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", "env"]
+skips = ["B101", "B601"]

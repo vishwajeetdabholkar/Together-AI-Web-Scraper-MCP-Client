@@ -1,0 +1,48 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:9000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 115-467-389
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:31:24] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:32:20] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:32:20] "GET /health HTTP/1.1" 200 -
+INFO:__main__:Processing chat message: summerise the UDFs for me for apache flink from here : https://docs.confluent.io/cloud/current/flink...
+[09/08/25 09:32:21] INFO     Processing request of type            server.py:624
+                             ListToolsRequest                                   
+INFO:mcp_client:Found 2 tools: ['scrape_url', 'scrape_advanced']
+INFO:__main__:Available tools: ['scrape_url', 'scrape_advanced']
+INFO:together_client:Sending request to meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8 with 2 tools
+INFO:together_client:Received response from Together AI
+INFO:__main__:No tools called, returning direct response
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:32:23] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:32:23] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:33:11] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:33:11] "GET /health HTTP/1.1" 200 -
+INFO:__main__:Processing chat message: summerise the UDFs for me for apache flink from here : https://docs.confluent.io/cloud/current/flink...
+[09/08/25 09:33:12] INFO     Processing request of type            server.py:624
+                             ListToolsRequest                                   
+INFO:mcp_client:Found 2 tools: ['scrape_url', 'scrape_advanced']
+INFO:__main__:Available tools: ['scrape_url', 'scrape_advanced']
+INFO:together_client:Sending request to meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8 with 2 tools
+INFO:together_client:Received response from Together AI
+INFO:__main__:AI wants to call 1 tools
+INFO:__main__:Executing tool: scrape_url
+INFO:mcp_client:Calling tool scrape_url with args: {'get_full_content': True, 'only_main_content': True, 'url': 'https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html'}
+[09/08/25 09:33:14] INFO     Processing request of type            server.py:624
+                             CallToolRequest                                    
+[09/08/25 09:33:21] INFO     HTTP Request: POST                  _client.py:1740
+                             http://localhost:8000/api/v1/scrape                
+                             "HTTP/1.1 200 OK"                                  
+                    INFO     Processing request of type            server.py:624
+                             ListToolsRequest                                   
+INFO:mcp_client:Tool result length: 26743 characters
+INFO:together_client:Sending request to meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8 with 0 tools
+INFO:together_client:Received response from Together AI
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:33:25] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:33:25] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Sep/2025 09:33:43] "GET /health HTTP/1.1" 200 -
+/Users/vishwajeetdabholkar/.pyenv/versions/3.12.10/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
