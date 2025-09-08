@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class MCPWebScraperClient:
     def __init__(self):
         # Set the correct path to your scrape server
-        self.server_path = os.path.abspath("scrape_mcp_server.py")
+        self.server_path = os.path.abspath("./scrape_mcp_server.py")
         self.server_command = "python"
         
         # Validate that the server file exists
