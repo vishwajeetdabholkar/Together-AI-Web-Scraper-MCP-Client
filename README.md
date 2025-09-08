@@ -19,6 +19,9 @@
 
 AI Web Scraper Pro is a production-grade application that combines the power of **Together AI's Llama 4 Maverick** with **Model Context Protocol (MCP)** to provide intelligent web content analysis and summarization. Built with a modern, professional UI and robust backend architecture.
 
+<img width="1723" height="894" alt="image" src="https://github.com/user-attachments/assets/2727d628-e9d8-4725-882f-41242cdfcf41" />
+
+
 ### 🎯 Key Capabilities
 
 - **Intelligent Web Scraping**: Extract and analyze content from any URL
